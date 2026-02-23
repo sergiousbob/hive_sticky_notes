@@ -169,13 +169,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 TextFormField(
                   controller: _titleController,
-                  decoration: const InputDecoration(hintText: 'Title'),
+                  decoration: const InputDecoration(hintText: 'Тема события'),
                 ),
                 const SizedBox(height: 10),
                 TextFormField(
                   controller: _bodyController,
 
-                  decoration: const InputDecoration(hintText: 'Body'),
+                  decoration: const InputDecoration(hintText: 'Описание'),
+                  maxLines: 10,
+                  minLines: 5,
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
