@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
           showForm(null);
         },
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(8.0),
         child:
             myHiveData
@@ -98,30 +98,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                        content: const Text("Вы действительно хотите удалить заметку?"),
                                                                       
                                           actions: <Widget>[
-                  TextButton(
-                    onPressed: () {
+                                TextButton(
+                                  onPressed: () {
                                     HiveFunctions.deleteUser(userData["key"]);
-                                                                        getHiveData();
-                                                                                              Navigator.of(ctx).pop();
-                    },
-                    child: const Text("Да"),
-                  ),
+                                    getHiveData();
+                                    Navigator.of(ctx).pop();
+                                    },
+                                    child: const Text("Да"),
+                                    ),
 
                                     TextButton(
-                    onPressed: () {
-                      Navigator.of(ctx).pop();
-
-                    },
-                    child: const Text("Нет"),
-                  ),
-                ],
-              ),
-            );
-         
-
-
-                                  },
-
+                                      onPressed: () {
+                                        Navigator.of(ctx).pop();
+                                        },
+                                        child: const Text("Нет"),
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                },
                                   icon: const Icon(Icons.delete),
                                 ),
                               ],
